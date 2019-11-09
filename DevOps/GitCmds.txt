@@ -1,0 +1,22 @@
+git init
+echo "readme for our project" >README.md
+git status
+git add README.md
+git status
+git config --global user.email "geekcoder98@gmail.com"
+git config --global user.name "Mushtari"
+git config --global  --list
+git commit -m "Our first Git Commit"
+git remote add origin https://github.com/Mushtari/GitHub02011.git
+
+
+
+cd GitHub0211
+git add GitCmds.txt
+git status
+git commit -m "Git Commands"
+git push -u origin master
+
+
+
+ 

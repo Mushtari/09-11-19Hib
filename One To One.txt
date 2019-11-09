@@ -1,0 +1,34 @@
+package com.LTI.JPAHIbEx.JPAHibExmpl;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class OneToOne {
+
+		   public static void main(String[] args) {
+		   
+		   EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("persistence");
+		   EntityManager entitymanager = emfactory.createEntityManager();
+		   entitymanager.getTransaction().begin();
+
+		   //Create Order Entity
+		   Order od = new Order();
+		   od.setOrderId(421);
+
+		   //Store Order 
+		   entitymanager.persist(od);
+
+		   //Create Order Details Entity
+		   OrderDetails det = new OrderDetails();
+		   det.setPrice(1000);
+		  
+		   //Store Order Details
+		   entitymanager.persist(det);
+
+		   entitymanager.getTransaction().commit();
+		   entitymanager.close();
+		   emfactory.close();
+		   }
+		}
+
